@@ -1,0 +1,26 @@
+<h2>Listado de Comunas</h2>
+<a href="{% url 'comuna_create' %}">Crear nueva comuna</a>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Población</th>
+        <th>Tasa de Vulnerabilidad</th>
+        <th>Fecha de Fundación</th>
+        <th>Acción</th>
+    </tr>
+    {% for comuna in comunas %}
+    <tr>
+        <td>{{ comuna.nombre }}</td>
+        <td>{{ comuna.poblacion }}</td>
+        <td>{{ comuna.tasa_de_vulnerabilidad }}</td>
+        <td>{{ comuna.fecha_fundacion }}</td>
+        <td>
+            [<a href="{% url 'comuna_update' comuna.pk %}">Editar</a>]
+            [<a href="{% url 'comuna_delete' comuna.pk %}">Eliminar</a>]
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="5">No hay comunas registradas.</td></tr>
+    {% endfor %}
+</table>

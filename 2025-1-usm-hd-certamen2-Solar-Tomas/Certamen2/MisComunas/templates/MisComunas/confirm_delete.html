@@ -1,0 +1,6 @@
+<h2>¿Estás seguro de eliminar "{{ comuna.nombre }}"?</h2>
+<form method="post">
+{% csrf_token %}
+<button type="submit">Sí, eliminar</button>
+<a href="{% url 'listarComunas' %}">Cancelar</a>
+</form>
