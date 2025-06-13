@@ -1,1 +1,0 @@
-# 2025-1-usm-hd-certamen2-Solar-Tomas
